@@ -35,7 +35,7 @@ public class ABaseNeutralSystemForNamingNumberingSystemsScript : ModuleScript
     };
     private readonly string[] _antiScuffedPeople = new string[] { };
 
-    private bool _isModuleSolved, _isSeedSet;
+    internal bool _isModuleSolved, _isSeedSet;
     private int _seed, _generatedNumber;
     internal string _answer;
     private string[] _keyboardLayouts = new string[]
@@ -47,6 +47,7 @@ public class ABaseNeutralSystemForNamingNumberingSystemsScript : ModuleScript
         "asdtghnioeq'prfyuklxzcvb m", // Qwpr
         "asetgyniohq'dfk urlzxcvbpm" // Norman
     };
+    private int[] _dictionaryKeys = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 20, 36, 100 };
 
     // Use this for initialization
     private void Start()
@@ -68,9 +69,9 @@ public class ABaseNeutralSystemForNamingNumberingSystemsScript : ModuleScript
 
         GenerateKeys();
 
-        _generatedNumber = _testingNumber == -1 ? _rnd.Next(0, 10000) : _testingNumber;
+        _generatedNumber = _testingNumber == -1 ? _rnd.Next(1, 10000) : _testingNumber;
         _displayedNumber.SetText("BASE-" + _generatedNumber.ToString());
-        _answer = BaseNamingScript.NumberToName(_generatedNumber);
+        _answer = BaseNamingScript.NumberToName(_generatedNumber, _dictionaryKeys.Contains(_generatedNumber));
 
         _fraction = new SeximalFraction(1, _generatedNumber);
         Log("The generated base is: base-" + _generatedNumber);
@@ -155,9 +156,12 @@ public class ABaseNeutralSystemForNamingNumberingSystemsScript : ModuleScript
     private void PressSubmit()
     {
         if (_isModuleSolved)
+        {
+            StopAllCoroutines();
             return;
+        }
 
-        if(_inputText.GetFormattedText() == _answer)
+        if (_inputText.GetFormattedText() == _answer)
         {
             _isModuleSolved = true;
             _module.HandlePass();
