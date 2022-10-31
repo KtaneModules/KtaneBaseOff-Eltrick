@@ -32,7 +32,7 @@ public class BaseNamingScript
         {13, "ker's dozenal"}
     };
 
-    private static Dictionary<int, string> _baseBaseNames = new Dictionary<int, string>()
+    internal static Dictionary<int, string> _baseBaseNames = new Dictionary<int, string>()
     {
         {0, "nullary" },
         {1, "unary" },
