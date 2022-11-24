@@ -1087,7 +1087,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a27d8cdb88c044b959b05b91848fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TwitchHelpMessage: 
+  TwitchHelpMessage: '''!{0} <[a-z]*>'' to press the location of the keys on the module
+    on a QWERTY keyboard and submit the answer. ''!{0} mute'' before submitting (in
+    a separate command) if you do not want to have the solve sound playing after solve.'
   TwitchManualCode: 
   TwitchAbandonModule: []
 --- !u!114 &114439677924154610
