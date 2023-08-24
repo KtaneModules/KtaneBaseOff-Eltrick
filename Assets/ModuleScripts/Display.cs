@@ -32,9 +32,9 @@ public class Display : MonoBehaviour
     private void ResizeText()
     {
         int multiplier = 1;
-        if (ABaseNeutralSystemForNamingNumberingSystemsScript.ScuffednessLevel == ABaseNeutralSystemForNamingNumberingSystemsScript.Scuffedness.None)
+        if (BaseOffScript.ScuffednessLevel == BaseOffScript.Scuffedness.None)
             DisplayText.text = GetFormattedText();
-        else if (ABaseNeutralSystemForNamingNumberingSystemsScript.ScuffednessLevel == ABaseNeutralSystemForNamingNumberingSystemsScript.Scuffedness.Extra)
+        else if (BaseOffScript.ScuffednessLevel == BaseOffScript.Scuffedness.Extra)
         {
             cap = float.MaxValue;
             multiplier = -1;

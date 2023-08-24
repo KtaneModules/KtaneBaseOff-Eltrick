@@ -15,6 +15,6 @@ MonoBehaviour:
   title: Base Off
   author: Eltrick, Obvious
   description: yes we implemented the entirety of the misalian base-naming system.
-  version: 0.46.1
+  version: 0.46.5
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 8bb9df7c22b64114aa19af9c0a3e3b85, type: 3}

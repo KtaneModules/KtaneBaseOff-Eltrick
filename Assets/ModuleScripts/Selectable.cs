@@ -16,7 +16,7 @@ public class Selectable : MonoBehaviour
         _possibleTexts[1] = y;
         ButtonText.text = x.ToString();
 
-        if (ABaseNeutralSystemForNamingNumberingSystemsScript.ScuffednessLevel == ABaseNeutralSystemForNamingNumberingSystemsScript.Scuffedness.Extra)
+        if (BaseOffScript.ScuffednessLevel == BaseOffScript.Scuffedness.Extra)
             ButtonText.transform.localScale = new Vector3(ButtonText.transform.localScale.x, -1 * Math.Abs(ButtonText.transform.localScale.y), ButtonText.transform.localScale.z);
     }
 

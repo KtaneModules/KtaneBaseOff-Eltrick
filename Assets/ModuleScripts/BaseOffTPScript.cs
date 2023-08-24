@@ -3,7 +3,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class ABaseNeutralSystemForNamingNumberingSystemsTPScript : TPScript<ABaseNeutralSystemForNamingNumberingSystemsScript>
+public class BaseOffTPScript : TPScript<BaseOffScript>
 {
     private bool _isMute = false;
     private string _qwertyLayout = "qwertyuiopasdfghjklzxcvbnm";
@@ -52,8 +52,9 @@ public class ABaseNeutralSystemForNamingNumberingSystemsTPScript : TPScript<ABas
             }
             Module._keyboard[26].OnInteract();
 
-            yield return null;
-            if (Module._isModuleSolved && _isMute)
+            while (!Module._isModuleSolved && _isMute)
+                yield return null;
+            if (_isMute)
                 Module._keyboard[26].OnInteract();
         }
     }

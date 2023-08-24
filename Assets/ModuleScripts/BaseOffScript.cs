@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Rnd = UnityEngine.Random;
 
-public class ABaseNeutralSystemForNamingNumberingSystemsScript : ModuleScript
+public class BaseOffScript : ModuleScript
 {
     public enum Scuffedness
     {
@@ -162,6 +162,7 @@ public class ABaseNeutralSystemForNamingNumberingSystemsScript : ModuleScript
 
         if (_inputText.GetFormattedText() == _answer)
         {
+            Log("Correct name submitted. Module solved.");
             _isModuleSolved = true;
             _module.HandlePass();
             StartCoroutine(PostSolve());
