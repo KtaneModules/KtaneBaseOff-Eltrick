@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public class Selectable : MonoBehaviour
+public class ModuleSelectable : MonoBehaviour
 {
     public KMSelectable Button { get; private set; }
     public TextMesh ButtonText;

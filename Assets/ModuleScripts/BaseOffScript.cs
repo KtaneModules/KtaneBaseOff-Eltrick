@@ -94,7 +94,7 @@ public class BaseOffScript : ModuleScript
     private void GenerateKeys()
     {
         _keyboard[26] = _submitButton;
-        _submitButton.GetComponent<Selectable>().SetTexts('*', '*');
+        _submitButton.GetComponent<ModuleSelectable>().SetTexts('*', '*');
         _submitButton.Assign(onInteract: () => { PressSubmit(); });
 
         for (int i = 0; i < _keyboard.Length - 1; i++)
@@ -112,7 +112,7 @@ public class BaseOffScript : ModuleScript
 
             _module.GetComponent<KMSelectable>().Children[i] = _keyboard[i];
 
-            _keyboard[i].Assign(onInteract: () => { PressKey(_keyboard[x].GetComponent<Selectable>().GetText()); });
+            _keyboard[i].Assign(onInteract: () => { PressKey(_keyboard[x].GetComponent<ModuleSelectable>().GetText()); });
         }
 
         _module.GetComponent<KMSelectable>().UpdateChildren();
@@ -138,9 +138,9 @@ public class BaseOffScript : ModuleScript
             b = random[i] != " " ? random[i].ToUpperInvariant()[0] : '_';
 
             if (_rnd.Next(0, 2) == 1 && a != ' ' && ScuffednessLevel != Scuffedness.None)
-                _keyboard[i].GetComponent<Selectable>().SetTexts(b, a);
+                _keyboard[i].GetComponent<ModuleSelectable>().SetTexts(b, a);
             else
-                _keyboard[i].GetComponent<Selectable>().SetTexts(a, b);
+                _keyboard[i].GetComponent<ModuleSelectable>().SetTexts(a, b);
         }
     }
 

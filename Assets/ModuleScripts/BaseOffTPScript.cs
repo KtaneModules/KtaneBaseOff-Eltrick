@@ -17,7 +17,7 @@ public class BaseOffTPScript : TPScript<BaseOffScript>
         {
             for (int j = 0; j < _qwertyLayout.Length; j++)
             {
-                if (Module._keyboard[j].GetComponent<Selectable>().GetText().ToString().ToLowerInvariant().Replace("_", " ") == Module._answer[i].ToString())
+                if (Module._keyboard[j].GetComponent<ModuleSelectable>().GetText().ToString().ToLowerInvariant().Replace("_", " ") == Module._answer[i].ToString())
                     Module._keyboard[j].OnInteract();
             }
             yield return new WaitForSeconds(.1f);
